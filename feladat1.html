@@ -1,0 +1,49 @@
+<!-- Készíts egy gondoltam egy számra alkalmazást. 
+a.) Az alkalmazás 1 és 100 között generáljon véletlen egész számot. 
+b.) A felhasználó egy beviteli mezőben írhasson be tippet és gomb kattintásra kapjon 
+visszajelzést, hogy eltalálta-e a számot. 
+• Ha nem találta el akkor írja ki, hogy a gondolt szám nagyobb vagy kisebb-e
+• A visszajelzés egy bekezdésben, vagy alert ablakban történjen.
+c.) Egy másik gombbal tegye lehetővé új szám generálását. -->
+
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gondoltam egy számra</title>
+</head>
+<body>
+    <script>
+        
+        let gondoltSzam = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
+        console.log(gondoltSzam);
+        
+        function ujSzamotKer(){
+            gondoltSzam = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
+            console.log(gondoltSzam);
+        }
+
+        function tippel(){
+            const tipp = parseInt(document.getElementById("tipp").value);
+            if (tipp == gondoltSzam){
+                eredmeny = "Eltaláltad!"
+            }
+            else if (tipp > gondoltSzam){
+                eredmeny = "Kisebbre gondoltam!"
+            }
+            else if (tipp < gondoltSzam){
+                eredmeny = "Nagyobbra gondoltam!"
+            }
+            document.getElementById("eredmeny").innerHTML = "" + eredmeny
+        }
+    </script>
+
+    <p>Gondoltam egy számra 1 és 100 között. Találd ki, melyikre!</p>
+    <input type="number" id="tipp" placeholder="Ide írd a tipped!"><br><br>
+    <button onclick="tippel()">Tippelek!</button>
+    <p id="eredmeny"></p><br>
+    <button onclick="ujSzamotKer()">Új számot kérek!</button>
+</body>
+</html>
