@@ -1,0 +1,51 @@
+<!-- Készíts egy oldalt, amin a felhasználó meg tud adni egy számot, és a megadott szám 
+alapján kiírja, hogy az adott szám a hét melyik napjának felel meg (1: hétfő, 2: kedd…)
+a.) Ha nem az [1,7] intervallumból ad meg számot, akkor a „Nem megfelelő számot adott 
+meg” üzenet jelenjen meg -->
+
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hét napja</title>
+</head>
+<body>
+    <script>
+        function melyikNap(){
+            let sorszam = parseInt(document.getElementById("sorszam").value);
+            switch (sorszam){
+                case 1:
+                    document.getElementById("valasz").innerHTML = "hétfő"
+                    break
+                case 2:
+                    document.getElementById("valasz").innerHTML = "kedd"
+                    break
+                case 3:
+                    document.getElementById("valasz").innerHTML = "szerda"
+                    break
+                case 4:
+                    document.getElementById("valasz").innerHTML = "csütörtök"
+                    break
+                case 5:
+                    document.getElementById("valasz").innerHTML = "péntek"
+                    break
+                case 6:
+                    document.getElementById("valasz").innerHTML = "szombat"
+                    break
+                case 7:
+                    document.getElementById("valasz").innerHTML = "vasárnap"
+                    break
+                default:
+                    document.getElementById("valasz").innerHTML = "Nem megfelelő számot adott meg"
+            }
+        }
+    </script>
+
+    <p>Adj meg egy számot 1 és 7 között, és megmondom, a hét melyik napjának felel meg.</p>
+    <input id="sorszam" placeholder="Ide írd a sorszámot!"><br><br>
+    <button onclick="melyikNap()">Mondd!</button>
+    <p id="valasz"></p>
+</body>
+</html>
