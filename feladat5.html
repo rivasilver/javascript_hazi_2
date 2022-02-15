@@ -1,0 +1,36 @@
+<!-- Készíts olyan gombot, melyre kattintva felugrik egy ablak és köszönti a felhasználót! 
+A gomb felirata: „Köszöntés” legyen!
+a.) a köszöntés a napszaknak megfelelően történjen! -->
+
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Köszöntés</title>
+</head>
+<body>
+    <script>
+        function koszont(){
+            let ido = new Date().getHours();
+            if (ido < 6 || ido > 21)
+                koszontes = "Jó éjszakát!";
+            
+            else if (ido < 11)
+                koszontes = "Jó reggelt!";
+            
+            else if (ido < 19)
+                koszontes = "Jó napot!";
+            
+            else
+                koszontes = "Jó estét!";
+            
+            alert(koszontes);
+        }
+    </script>
+
+    <p>Kattints a gombra!</p>
+    <button onclick="koszont()">Köszöntés</button>
+</body>
+</html>
